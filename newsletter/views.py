@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .forms import SignUpForm
+from .models import SignUp
 # Create your views here.
 def home(request):
 	title = "Welcome"
@@ -14,6 +15,8 @@ def home(request):
 	if form.is_valid():
 
 		instance = form.save(commit = False)
+
+
 		roll_no = form.cleaned_data.get("roll_no")
 		first_name = form.cleaned_data.get("first_name")
 		last_name = form.cleaned_data.get("last_name")
@@ -27,3 +30,8 @@ def home(request):
 
 
 	return render(request,"home.html", context)
+
+def list(request):
+	sign_ups = SignUp.objects.all()
+	context = {"users":sign_ups}
+	return render(request, "list.html", context)
