@@ -1,0 +1,17 @@
+<table>
+    <tr>
+        <th>roll_no</th>
+        <th>first_name</th>
+        <th>last_name</th>
+    </tr>
+    {% for item in query_results %}
+
+    <tr> 
+        <td>{{ item.roll_no }}</td>
+        <td>{{ item.first_name }}</td>
+        <td>{{ item.last_name }}</td>
+        {% endfor %}
+     
+    </tr>
+    
+</table>

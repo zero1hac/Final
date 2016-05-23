@@ -12,9 +12,8 @@ def home(request):
 	}
 
 	if form.is_valid():
+
 		instance = form.save(commit = False)
-
-
 		roll_no = form.cleaned_data.get("roll_no")
 		first_name = form.cleaned_data.get("first_name")
 		last_name = form.cleaned_data.get("last_name")
