@@ -7,6 +7,8 @@ urlpatterns = [
     # Examples:
     url(r'^$', 'newsletter.views.home', name='home'),
     url(r'^list/$', 'newsletter.views.list', name='list'),
+    url(r'^search/$', 'newsletter.views.search', name='search'),
+    url(r'^search_form/$', 'newsletter.views.search_view', name='search_view'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls))

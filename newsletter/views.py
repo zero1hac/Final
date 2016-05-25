@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse
 
 from .forms import SignUpForm
 from .models import SignUp
@@ -35,3 +35,14 @@ def list(request):
 	sign_ups = SignUp.objects.all()
 	context = {"users":sign_ups}
 	return render(request, "list.html", context)
+
+def search(request):
+	text = request.GET['query']
+	sign_ups = SignUp.objects.filter(first_name=text)
+	context = {"users":sign_ups}
+	if sign_ups is not None:
+		return render(request, "search_results.html", context)
+	else :
+		return HttpResponse("No results found")
+def search_view(request):
+	return render(request, "search.html", {})

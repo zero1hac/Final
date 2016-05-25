@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>List</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Roll number</th>
+        <th>First name</th>
+        <th>Last name</th>
+    </tr>
+    {% for item in users %}
+
+    <tr> 
+        <td>{{ item.roll_no }}</td>
+        <td>{{ item.first_name }}</td>
+        <td>{{ item.last_name }}</td>
+        {% endfor %}
+     
+    </tr>
+    
+</table>
+</body>
+</html>
